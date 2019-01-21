@@ -3,15 +3,16 @@
 
 ## Writeup - Daniel Alejandro Reyna Torres
 
-In this project, it is presented an (extended) kalman filter to estimate the state of a moving car with noisy lidar and radar measurements. The project implements C++ to write a program able to read and analyse randa and lidar measurements to track and predict the car position.
+In this project, it is presented an (extended) kalman filter to estimate the state of a moving car with noisy lidar and radar measurements. The project implements c++ to write a program able to read and analyse radar and lidar measurements to track and predict a car position through the udacity simulator.
 
+![](output/aim.png)
 ---
 
 ## The Project
 
 The goals / steps of this project are the following:
 
-* Use the UDACITY simulator to drive and test the (extended) kalman filter
+* Use the udacity simulator to drive and test the (extended) kalman filter
 * Compute RMSE and compare to a minimum given value
 * Leave out radar/lidar feedback and compare results
 * Test the kalman filter on both track 1 and track 2
@@ -41,7 +42,7 @@ Assuming we have 'cmake', 'make' and 'uWebSocketIO' already installed, open a te
         ```
 * Using the Udacity provided simulator, select `Project 1/2 EKF and UKF`   in the main menu screen. Once the scene is loaded you can hit the START button to observe how the object moves and how measurement markers are positioned in the data set.
 
-#### 2. Kalman Filter Alogorithm
+#### 2. Kalman Filter Algorithm
 
 The Kalman filter is an estimation algorithm used to estimate the state of a system given noisy and uncertain measurements. In this project, measurements are acquired through radar and lidar sensors.
 
@@ -57,7 +58,7 @@ The Extended Kalman Filter come to the scenario when the system is not linear, t
 
 #### 3. Testing
 
-The udacity simulator presents the following initial screen:
+The udacity simulator shows the following initial screen:
 
 ![](output/Sim_ini.png)
 
@@ -67,25 +68,65 @@ We start the project and run the test on Dataset 1. Lidar measurements are red c
 
 Finally, I tested on Dataset 2, but also leaving out the radar on one run and then the same with lidar. Results are the following:
 
+Dataset 1, [video](output/Results_ds1.mov)  :
 
+    | State Values     | RMSE      |
+    |:----------------:|:---------:|
+    | x - position     | 0.0973    | 
+    | y - position     | 0.0855    |
+    | x - velocity	   | 0.4513    |
+    | y - velocity	   | 0.4399    |
+
+Dataset 2, [video](output/Results_ds2.mov) :
+
+    | State Values     | RMSE      |
+    |:----------------:|:---------:|
+    | x - position     | 0.0726    | 
+    | y - position     | 0.0965    |
+    | x - velocity	   | 0.4216    |
+    | y - velocity	   | 0.4932    |
+
+Dataset 1 RADAR only, [video](output/Results_RADAR_only) :
+
+    | State Values     | RMSE      |
+    |:----------------:|:---------:|
+    | x - position     | 0.2302    | 
+    | y - position     | 0.3464    |
+    | x - velocity	   | 0.5835    |
+    | y - velocity	   | 0.8040    |
+
+Dataset 1 LIDAR only, [video](output/Results_LIDAR_only) :
+
+    | State Values     | RMSE      |
+    |:----------------:|:---------:|
+    | x - position     | 0.1473    | 
+    | y - position     | 0.1153    |
+    | x - velocity	   | 0.6383    |
+    | y - velocity	   | 0.5346    |
+
+From these tests, we can see:
+
+* Results on the dataset 1 are a bit more accurate that on dataset 2.
+* Radar measurements tend to be more more noisy, thus less accurate, than the lidar measurements.
+* The use of extended kalman filter with both lidar and radar measurements achieves much better results, they provide robust estimations for tracking objects.
 
 #### 4. Final Results
 
-The final step and at some point hard, because of libraries and communication setups, was to run the simulator to see how well the car was driving around the given track and that measures such as RMSE, position and velocity were properly caluclated and displayed.
+At the end of the process and considering radar and lidar measurements during the tracking process, the kalman fuilter is able to predict the car position around the track with decent RMSE values as compared with those in the rubric! 
 
-Overall picture of testing on track 1:
+Overall picture of testing on track 1 (including both RADAR and LIDAR measurements):
 
 ![](output/Sim_end.png)
 
-At the end of the process, the kalman fuilter is able to predict the car position around the track with decent RMSE values as compared with those in the rubric!
-
-Here's a [link to my video result](output/Results.mov).
+Here's a [link to my video result](output/Results_ds1.mov).
 
 ---
 
 ## Discussion
 
-Very interesting way to track the car position but also useful to track other objects. Programming in C++ could be quite challenging if this is not an every-dat programming language for anybody. Final results shown how powerful is the Kalman filter.
+Very interesting way to track the car position but also useful to track other objects. Programming in C++ could be quite challenging if this is not an every-dat programming language for someone. Final results shown how powerful is the (extended) kalman filter.  
+
+Sensor fusion is a very important feature in self driving cars, it provides very useful (and somehow 'hidden') information, and with the use of different sensors for tracking object such as lidar and radar, we have better tracking/estimation results due to system redundancy.
 
 
 Thank you for reading this report.
