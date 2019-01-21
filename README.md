@@ -86,7 +86,7 @@ Dataset 2, [video](output/Results_ds2.mov) :
     | x - velocity	   | 0.4216    |
     | y - velocity	   | 0.4932    |
 
-Dataset 1 RADAR only, [video](output/Results_RADAR_only) :
+Dataset 1 RADAR only, [video](output/Results_RADAR_only.mov) :
 
     | State Values     | RMSE      |
     |:----------------:|:---------:|
@@ -95,7 +95,7 @@ Dataset 1 RADAR only, [video](output/Results_RADAR_only) :
     | x - velocity	   | 0.5835    |
     | y - velocity	   | 0.8040    |
 
-Dataset 1 LIDAR only, [video](output/Results_LIDAR_only) :
+Dataset 1 LIDAR only, [video](output/Results_LIDAR_only.mov) :
 
     | State Values     | RMSE      |
     |:----------------:|:---------:|

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="extended-kalman-filter">Extended Kalman Filter</h1>
+<p><a href="http://www.udacity.com/drive"><img src="https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg" alt="Udacity - Self-Driving Car NanoDegree"></a></p>
+<h2 id="writeup---daniel-alejandro-reyna-torres">Writeup - Daniel Alejandro Reyna Torres</h2>
+<p>This project presents an implementation of an (extended) kalman filter to estimate the state of a moving car with noisy lidar and radar measurements. The project uses c++ to write a program able to read and analyse radar and lidar measurements to track and predict a car position through the udacity simulator.</p>
+<h2 id=""><img src="output/aim.png" alt=""></h2>
+<h2 id="the-project">The Project</h2>
+<p>The goals / steps of this project are the following:</p>
+<ul>
+<li>Use the udacity simulator to drive and test the (extended) kalman filter</li>
+<li>Compute RMSE and compare to a minimum given value</li>
+<li>Leave out radar/lidar feedback and compare results</li>
+<li>Test the kalman filter on both track 1 and track 2</li>
+<li>Summarize the results with a written report</li>
+</ul>
+<hr>
+<h4 id="1-build-and-run">1. Build and Run</h4>
+<p>Assuming we have 'cmake', 'make' and 'uWebSocketIO' already installed, open a terminal:</p>
+<ul>
+<li>
+<p>Clone this repository</p>
+</li>
+<li>
+<p>On the main project terminal:</p>
+<ul>
+<li>
+<p>Make a build directory:</p>
+<pre class="hljs"><code><div>mkdir build &amp;&amp; cd build
+</div></code></pre>
+</li>
+<li>
+<p>Compile:</p>
+<pre class="hljs"><code><div>cmake .. &amp;&amp; make
+</div></code></pre>
+</li>
+<li>
+<p>Run it:</p>
+<pre class="hljs"><code><div>./ExtendedKF
+</div></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Using the Udacity provided simulator, select <code>Project 1/2 EKF and UKF</code>   in the main menu screen. Once the scene is loaded you can hit the START button to observe how the object moves and how measurement markers are positioned in the data set.</p>
+</li>
+</ul>
+<h4 id="2-kalman-filter-algorithm">2. Kalman Filter Algorithm</h4>
+<p>The Kalman filter is an estimation algorithm used to estimate the state of a system given noisy and uncertain measurements. In this project, measurements are acquired through radar and lidar sensors.</p>
+<p>Kalman filter basically work in a predict/update loop: <a href="https://classroom.udacity.com/nanodegrees/nd013/parts/edf28735-efc1-4b99-8fbb-ba9c432239c8/modules/49d8fda9-69c7-4f10-aa18-dc3a2d790cbe/lessons/ec3054b9-9ffc-45c4-8523-485e2f7022da/concepts/a2a6c61f-afdd-47ae-9e9f-dcbe9916e772">Check this site for more detail</a></p>
+<p><img src="output/kf_loop.png" alt=""></p>
+<p>First, we have a prior information of the object to track, we use this information to predict the state of that object until the next measurement arrives, this is the PREDICTION step. Then, we gather information from sensors (like lidar and radar) and use this information to courrect our belief about the state of the object, this correspond to the UPDATE step.</p>
+<p>In case we have multiple sensors, each sensor will have its own predcition update scheme. For the radar and lidar sensors, the prediction step would be the same, however, the measurement update would be different since both sensor &quot;see&quot; the world differently.</p>
+<p>The Extended Kalman Filter come to the scenario when the system is not linear, this is the case when working with radar measurements. It linearise the system distribution around the mean of the current state and then use this result in the prediction and update states of the Kalman Filter algorithm.</p>
+<h4 id="3-testing">3. Testing</h4>
+<p>The udacity simulator shows the following initial screen:</p>
+<p><img src="output/Sim_ini.png" alt=""></p>
+<p>We start the project and run the test on Dataset 1. Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and the prediction are the green triangles:</p>
+<p><img src="output/Sim_run.png" alt=""></p>
+<p>Finally, I tested on Dataset 2, but also leaving out the radar on one run and then the same with lidar. Results are the following:</p>
+<p>Dataset 1, <a href="output/Results_ds1.mov">video</a>  :</p>
+<pre><code>| State Values     | RMSE      |
+|:----------------:|:---------:|
+| x - position     | 0.0973    | 
+| y - position     | 0.0855    |
+| x - velocity	   | 0.4513    |
+| y - velocity	   | 0.4399    |
+</code></pre>
+<p>Dataset 2, <a href="output/Results_ds2.mov">video</a> :</p>
+<pre><code>| State Values     | RMSE      |
+|:----------------:|:---------:|
+| x - position     | 0.0726    | 
+| y - position     | 0.0965    |
+| x - velocity	   | 0.4216    |
+| y - velocity	   | 0.4932    |
+</code></pre>
+<p>Dataset 1 RADAR only, <a href="output/Results_RADAR_only.mov">video</a> :</p>
+<pre><code>| State Values     | RMSE      |
+|:----------------:|:---------:|
+| x - position     | 0.2302    | 
+| y - position     | 0.3464    |
+| x - velocity	   | 0.5835    |
+| y - velocity	   | 0.8040    |
+</code></pre>
+<p>Dataset 1 LIDAR only, <a href="output/Results_LIDAR_only.mov">video</a> :</p>
+<pre><code>| State Values     | RMSE      |
+|:----------------:|:---------:|
+| x - position     | 0.1473    | 
+| y - position     | 0.1153    |
+| x - velocity	   | 0.6383    |
+| y - velocity	   | 0.5346    |
+</code></pre>
+<p>From these tests, we can see:</p>
+<ul>
+<li>Results on the dataset 1 are a bit more accurate that on dataset 2.</li>
+<li>Radar measurements tend to be more more noisy, thus less accurate, than the lidar measurements.</li>
+<li>The use of extended kalman filter with both lidar and radar measurements achieves much better results, they provide robust estimations for tracking objects.</li>
+</ul>
+<h4 id="4-final-results">4. Final Results</h4>
+<p>At the end of the process and considering radar and lidar measurements during the tracking process, the kalman fuilter is able to predict the car position around the track with decent RMSE values as compared with those in the rubric!</p>
+<p>Overall picture of testing on track 1 (including both RADAR and LIDAR measurements):</p>
+<p><img src="output/Sim_end.png" alt=""></p>
+<p>Here's a <a href="output/Results_ds1.mov">link to my video result</a>.</p>
+<hr>
+<h2 id="discussion">Discussion</h2>
+<p>Very interesting way to track the car position but also useful to track other objects. Programming in C++ could be quite challenging if this is not an every-dat programming language for someone. Final results shown how powerful is the (extended) kalman filter.</p>
+<p>Sensor fusion is a very important feature in self driving cars, it provides very useful (and somehow 'hidden') information, and with the use of different sensors for tracking object such as lidar and radar, we have better tracking/estimation results due to system redundancy.</p>
+<p>Thank you for reading this report.</p>
+<p><em>Daniel</em></p>
+
+</body>
+</html>
